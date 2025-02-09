@@ -1,4 +1,4 @@
-# OOP with Design Patterns
+![image](https://github.com/user-attachments/assets/ca901fc6-d277-4351-a07f-456f6d116492)# OOP with Design Patterns
 
 Repository ini berisi implementasi beberapa Design Pattern dalam Object-Oriented Programming (OOP), yaitu Factory Method, Decorator, dan Iterator. Setiap pola desain dijelaskan dengan konsep, diagram kelas, use-case, dan diagram sekuens.
 
@@ -245,11 +245,18 @@ Dengan pendekatan ini, pengguna dapat menambahkan, menghapus, dan mengakses kend
 
 ---
 
+## 4. **CLI APPS OOP PYTHON USING DESIGN PATTERN**
+
+Secara keseluruhan, CLI yang dihasilkan oleh ketiga jenis design pattern tidak ada yang berubah. Hal yang berubah adalah proses yang ada di dalam aplikasi tersebut dan tidak terdeteksi oleh pengguna
+
+![image](https://github.com/user-attachments/assets/486ae520-2ef6-4a8f-b36b-5c2df4c8360f)
+
+![image](https://github.com/user-attachments/assets/2da1c0ec-9277-413f-8fa9-8d0de12ccfd3)
+
+
+---
+
 Dengan adanya dokumen ini, diharapkan pembaca dapat memahami implementasi dari masing-masing design pattern dalam OOP serta bagaimana pola-pola tersebut dapat digunakan dalam berbagai kasus nyata.
-
-
-
-
 
 
 
