@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/ca901fc6-d277-4351-a07f-456f6d116492)# OOP with Design Patterns
+# OOP with Design Patterns
 
 Repository ini berisi implementasi beberapa Design Pattern dalam Object-Oriented Programming (OOP), yaitu Factory Method, Decorator, dan Iterator. Setiap pola desain dijelaskan dengan konsep, diagram kelas, use-case, dan diagram sekuens.
 
