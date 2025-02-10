@@ -25,6 +25,9 @@ class Vehicle:
 class VehicleDecorator(Vehicle):
     def __init__(self, decorated_vehicle):
         self._decorated_vehicle = decorated_vehicle
+
+    def __getattr__(self, name):
+        return getattr(self._decorated_vehicle, name)
     
     def display_info(self):
         return self._decorated_vehicle.display_info()
