@@ -170,38 +170,51 @@ Diagram di atas menunjukkan alur eksekusi aplikasi yang menggunakan Decorator De
 **Iterator** adalah pola desain perilaku yang digunakan untuk menyediakan cara untuk mengakses elemen-elemen dalam koleksi secara berurutan tanpa mengekspos detail implementasinya.
 
 ### a. Concept
-![Iterator Concept](https://github.com/user-attachments/assets/817cb610-7b54-46b2-aa6f-2975986c556d)
+![image](https://github.com/user-attachments/assets/721beca4-bbb7-4eb3-8f8c-5302910adb1b)
 **Iterator Design Pattern** adalah pola desain perilaku yang digunakan untuk memberikan cara terstruktur dalam mengakses elemen-elemen dalam suatu koleksi (collection) secara berurutan tanpa mengekspos representasi internalnya.
 
 Berdasarkan diagram di atas, berikut adalah konsep dasar dari Iterator Design Pattern:
 
-  1. Iterable (Interface/Abstract Class)
-     - Mendefinisikan metode __iter__(), yang mengembalikan objek iterator.
-     - Dalam diagram ini, Iterable diimplementasikan oleh ConcreteCollection.
-       
-  2. ConcreteCollection (Koleksi Konkret)
-     - Menyimpan daftar elemen (items: List).
-     - Memiliki metode addItem(item: object) dan removeItem(item: object) untuk menambah/menghapus item.
-     - Mengimplementasikan __iter__() untuk mengembalikan iterator.
-
-  3. Iterator (Interface/Abstract Class)
-     - Menyediakan metode hasNext(): bool untuk memeriksa apakah masih ada elemen berikutnya dalam koleksi.
-     - Menyediakan metode next(): object untuk mengembalikan elemen berikutnya.
-       
-  4. ConcreteIterator (Iterator Konkret)
-     - Memiliki atribut collection: List dan index: int untuk melacak posisi iterasi saat ini.
-     - Mengimplementasikan hasNext() dan next() untuk mengelola iterasi.
+  1. Interface Iterator
+     - Merupakan antarmuka yang mendefinisikan operasi dasar iterasi, yaitu:
+       - getNext(): Mengembalikan elemen berikutnya dalam koleksi.
+       - hasMore() : bool: Mengembalikan nilai boolean yang menunjukkan apakah masih ada elemen yang tersisa dalam koleksi.
+         
+  2. ConcreteIterator
+     - Implementasi konkret dari Iterator.
+     - Memiliki atribut:
+       - collection: ConcreteCollection: Menyimpan referensi ke koleksi yang sedang diiterasi.
+       - iterationState: Menyimpan posisi iterasi saat ini.
+     - Memiliki metode:
+       - Konstruktor untuk menginisialisasi iterator dengan koleksi.
+       - Implementasi metode getNext() untuk mengambil elemen berikutnya.
+       - Implementasi metode hasMore() untuk mengecek apakah masih ada elemen yang dapat diakses.
+         
+  3. Interface IterableCollection
+     - Menyediakan antarmuka bagi koleksi agar bisa menghasilkan iterator.
+     - Memiliki metode:
+       - createIterator(): Iterator: Metode untuk membuat dan mengembalikan iterator.
+       - 
+  4. ConcreteCollection
+     - Implementasi konkret dari IterableCollection.
+     - Memiliki metode createIterator() yang mengembalikan objek ConcreteIterator untuk koleksi ini.
 
 **Iterator Design Pattern** memungkinkan iterasi objek koleksi tanpa harus mengetahui struktur internalnya. Dalam diagram ini, ConcreteCollection berperan sebagai koleksi data yang dapat diiterasi, sementara ConcreteIterator menangani logika iterasi dengan metode hasNext() dan next().
 
 ### b. Class Diagram
-![Iterator Class Diagram](https://github.com/user-attachments/assets/1b217bc2-3c0c-4220-9bab-94078e8c0615)
+![image](https://github.com/user-attachments/assets/cdce917d-281f-4cf4-9886-549b08782760)
 
-Class diagram ini menunjukkan implementasi Iterator Design Pattern dalam sebuah aplikasi yang mengelola koleksi kendaraan (VehicleCollection) dan melakukan iterasi terhadap daftar kendaraan menggunakan VehicleIterator.
-  1. VehicleCollection berfungsi sebagai koleksi kendaraan yang dapat diiterasi.
-  2. VehicleIterator memungkinkan iterasi melalui daftar kendaraan tanpa mengekspos detail implementasi list-nya.
-  3. Vehicle sebagai superclass menyediakan atribut dasar kendaraan, dengan subclass (Car, Motorcycle, Truck) yang menambahkan fitur khusus masing-masing.
-  4. Dengan menggunakan Iterator Design Pattern, aplikasi ini memungkinkan traversal kendaraan dengan cara yang lebih bersih, fleksibel, dan terstruktur.
+  1. Iterator Interface
+     - Merupakan interface standar yang digunakan dalam desain pola Iterator.
+     - Memiliki metode __next__(), yang mengembalikan objek Vehicle.
+     - Interface ini digunakan untuk membuat objek yang bisa diiterasi.
+  2. Iterable Interface
+     - Merupakan interface standar yang harus diimplementasikan oleh kelas yang ingin bisa diiterasi.
+     - Memiliki metode __iter__(), yang mengembalikan objek Iterator.
+  3. VehicleIterator (ConcreteIterator)
+     - Kelas ini mengimplementasikan Iterator dan bertanggung jawab untuk iterasi melalui daftar kendaraan.
+  4. VehicleCollection (ConcreteIterable)
+     - Kelas ini bertindak sebagai koleksi kendaraan yang dapat diiterasi menggunakan VehicleIterator.
 
 ### c. Use Case
 ![Iterator Use Case](https://github.com/user-attachments/assets/2186feca-063b-4846-aaa8-fd8a4597a363)
