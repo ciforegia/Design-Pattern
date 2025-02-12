@@ -59,7 +59,7 @@ Use Cases (Fitur Aplikasi)
   4. selesai → Menandakan bahwa pengguna menyelesaikan interaksi dengan sistem.
 
 ### d. Sequence Diagram
-![image](https://github.com/user-attachments/assets/1967237a-5b3d-4f24-8d3f-482fc55b9c7f)
+![image](https://github.com/user-attachments/assets/e00cc6d5-8029-481b-bdc0-b7ff4f14d7f5)
   1. Menambahkan Kendaraan
      - User memilih "Tambah Kendaraan"
      - Main memanggil VehicleFactory untuk menentukan factory yang sesuai berdasarkan jenis kendaraan (Car, Motorcycle, Truck).
@@ -139,7 +139,7 @@ Use Cases (Fitur Aplikasi)
   4. selesai → Menandakan bahwa pengguna menyelesaikan interaksi dengan sistem.
 
 ### d. Sequence Diagram
-![Decorator Sequence Diagram](https://github.com/user-attachments/assets/89d58682-4b1c-4496-bfa4-0669ab788427)
+![Decorator Sequence Diagram](https://github.com/user-attachments/assets/3fc03908-d1ea-45c7-8a87-cd08d19d50ff)
 Diagram di atas menunjukkan alur eksekusi aplikasi yang menggunakan Decorator Design Pattern untuk mengelola berbagai jenis kendaraan (Car, Motorcycle, Truck). Berikut adalah proses utama yang digambarkan:
 
   1. Menambah Kendaraan
