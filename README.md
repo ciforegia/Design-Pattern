@@ -25,7 +25,7 @@ Penjelasan Berdasarkan Diagram
 **Factory Method** memungkinkan pembuatan objek dilakukan oleh subclass melalui metode factoryMethod(), sehingga kode utama (Creator) tidak bergantung pada implementasi spesifik produk (ConcreteProductA atau ConcreteProductB). Ini memberikan fleksibilitas dan kemudahan dalam menambahkan produk baru tanpa mengubah kode utama.
 
 ### b. Class Diagram
-![Factory Method Class Diagram](https://github.com/user-attachments/assets/8565738b-4061-44d1-a269-9190eeefd46a)
+![Factory Method Class Diagram](https://github.com/user-attachments/assets/5a1b6a0d-df23-403a-b304-5c6699bf6b20)
 
 Penjelasan Struktur Class Diagram
   1. Class Vehicle (Superclass/Parent Class)
@@ -48,7 +48,7 @@ Penjelasan Struktur Class Diagram
      - Menggunakan VehicleFactory untuk membuat objek kendaraan secara dinamis tanpa mengetahui implementasi spesifiknya.
 
 ### c. Use Case
-![Factory Method Use Case](https://github.com/user-attachments/assets/c00ff44f-a43f-498a-932f-e4ab0b0a03ee)
+![Factory Method Use Case](https://github.com/user-attachments/assets/8f7f7ce3-ba3d-460f-bea8-641f31f20145)
 Aktor (Actor)
   - admin yang dapat melakukan berbagai operasi terhadap kendaraan dalam sistem.
 
@@ -106,7 +106,7 @@ Penjelasan Berdasarkan Diagram
 Dengan pola ini, kita bisa menambahkan fitur ke objek tanpa mengubah kode aslinya, menjadikannya lebih fleksibel dan modular.
 
 ### b. Class Diagram
-![Decorator Class Diagram](https://github.com/user-attachments/assets/c7b80e1b-52ce-4cf5-8010-69877ba54184)
+![Decorator Class Diagram](https://github.com/user-attachments/assets/525f4f87-ffc9-4251-b2bd-d6e41a83bc3a)
 Class diagram di atas menunjukkan penerapan Decorator Design Pattern dalam konteks aplikasi yang menangani berbagai jenis kendaraan (Vehicle).
 
 Penjelasan Struktur Class Diagram
@@ -128,7 +128,7 @@ Penjelasan Struktur Class Diagram
 Pola Decorator dalam diagram ini memberikan fleksibilitas dalam menambah atau mengubah perilaku objek Vehicle tanpa perlu membuat subclass baru untuk setiap jenis kendaraan.
 
 ### c. Use Case
-![Decorator Use Case](https://github.com/user-attachments/assets/c22db2d2-d364-492f-b263-fbeff9f944dd)
+![Decorator Use Case](https://github.com/user-attachments/assets/8f7f7ce3-ba3d-460f-bea8-641f31f20145)
 Aktor (Actor)
   - admin yang dapat melakukan berbagai operasi terhadap kendaraan dalam sistem.
 
@@ -217,7 +217,8 @@ Berdasarkan diagram di atas, berikut adalah konsep dasar dari Iterator Design Pa
      - Kelas ini bertindak sebagai koleksi kendaraan yang dapat diiterasi menggunakan VehicleIterator.
 
 ### c. Use Case
-![Iterator Use Case](https://github.com/user-attachments/assets/2186feca-063b-4846-aaa8-fd8a4597a363)
+![Iterator Use Case](https://github.com/user-attachments/assets/8f7f7ce3-ba3d-460f-bea8-641f31f20145)
+
 Aktor (Actor)
   - admin yang dapat melakukan berbagai operasi terhadap kendaraan dalam sistem.
 
