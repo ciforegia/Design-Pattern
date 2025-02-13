@@ -202,7 +202,7 @@ Berdasarkan diagram di atas, berikut adalah konsep dasar dari Iterator Design Pa
 **Iterator Design Pattern** memungkinkan iterasi objek koleksi tanpa harus mengetahui struktur internalnya. Dalam diagram ini, ConcreteCollection berperan sebagai koleksi data yang dapat diiterasi, sementara ConcreteIterator menangani logika iterasi dengan metode hasNext() dan next().
 
 ### b. Class Diagram
-![image](https://github.com/user-attachments/assets/cdce917d-281f-4cf4-9886-549b08782760)
+![classiterator](https://github.com/user-attachments/assets/be4f902e-9853-4011-b630-41a7891f1592)
 
   1. Iterator Interface
      - Merupakan interface standar yang digunakan dalam desain pola Iterator.
@@ -229,7 +229,8 @@ Use Cases (Fitur Aplikasi)
   4. selesai → Menandakan bahwa pengguna menyelesaikan interaksi dengan sistem.
 
 ### d. Sequence Diagram
-![Iterator Sequence Diagram](https://github.com/user-attachments/assets/cae6c286-ecca-43ae-9b7f-4cf0816bec62)
+![SequenceIterator](https://github.com/user-attachments/assets/a6c71b66-46ce-4f90-b3c1-4b6fd46fb842)
+
 Sequence diagram ini menggambarkan bagaimana pengguna berinteraksi dengan sistem untuk menambah, menghapus, dan menampilkan kendaraan menggunakan Iterator Design Pattern.
 
   1. Tambah Kendaraan
