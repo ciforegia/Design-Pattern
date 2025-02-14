@@ -1,13 +1,20 @@
 from datetime import datetime
+from abc import ABC, abstractmethod
+
+# Interface (Abstract Class)
+class IVehicle(ABC):
+    @abstractmethod
+    def display_info(self):
+        pass
 
 # Parent class
-class Vehicle:
+class Vehicle(IVehicle):
     def __init__(self, brand: str, manufacture_date: str, price: float, mileage: int, features: dict):
-        self.brand = brand
+        self.brand = brand  
         self.manufacture_date = datetime.strptime(manufacture_date, "%Y-%m-%d")
-        self.price = price
-        self.mileage = mileage
-        self.features = features
+        self.price = price  
+        self.mileage = mileage  
+        self.features = features  
 
     def display_info(self):
         vehicle_info = (
@@ -22,10 +29,10 @@ class Vehicle:
         return vehicle_info
 
 # Decorator Base Class
-class VehicleDecorator(Vehicle):
-    def __init__(self, decorated_vehicle):
-        self._decorated_vehicle = decorated_vehicle
-
+class VehicleDecorator(IVehicle):
+    def __init__(self, decorated_vehicle: IVehicle):
+        self._decorated_vehicle = decorated_vehicle  
+    
     def __getattr__(self, name):
         return getattr(self._decorated_vehicle, name)
     
@@ -34,25 +41,25 @@ class VehicleDecorator(Vehicle):
 
 # Concrete Decorators
 class CarDecorator(VehicleDecorator):
-    def __init__(self, decorated_vehicle, num_seats):
+    def __init__(self, decorated_vehicle: IVehicle, num_seats: int):
         super().__init__(decorated_vehicle)
-        self.num_seats = num_seats
+        self.num_seats = num_seats  
     
     def display_info(self):
         return super().display_info() + f"Jumlah Kursi: {self.num_seats}\n"
 
 class MotorcycleDecorator(VehicleDecorator):
-    def __init__(self, decorated_vehicle, engine_capacity):
+    def __init__(self, decorated_vehicle: IVehicle, engine_capacity: float):
         super().__init__(decorated_vehicle)
-        self.engine_capacity = engine_capacity
+        self.engine_capacity = engine_capacity  
     
     def display_info(self):
         return super().display_info() + f"Kapasitas Mesin: {self.engine_capacity} cc\n"
 
 class TruckDecorator(VehicleDecorator):
-    def __init__(self, decorated_vehicle, cargo_capacity):
+    def __init__(self, decorated_vehicle: IVehicle, cargo_capacity: int):
         super().__init__(decorated_vehicle)
-        self.cargo_capacity = cargo_capacity
+        self.cargo_capacity = cargo_capacity  
     
     def display_info(self):
         return super().display_info() + f"Kapasitas Muatan: {self.cargo_capacity} kg\n"
@@ -60,19 +67,18 @@ class TruckDecorator(VehicleDecorator):
 # Vehicle List
 vehicle_list = []
 
-def add_vehicle(vehicle):
+def add_vehicle(vehicle: IVehicle):
     vehicle_list.append(vehicle)
     print(f"{vehicle.brand} berhasil ditambahkan.")
 
-def remove_vehicle(brand):
-    global vehicle_list
-    vehicle_list = [v for v in vehicle_list if v.brand != brand]
+def remove_vehicle(brand: str):
+    global vehicle_list  
+    vehicle_list = [v for v in vehicle_list if v.brand != brand]  
     print(f"{brand} berhasil dihapus dari daftar.")
 
 def get_vehicle_list():
     if not vehicle_list:
         return ["Tidak ada kendaraan dalam daftar."]
-    
     return [v.display_info() for v in vehicle_list]
 
 # Program utama
@@ -134,6 +140,5 @@ if __name__ == "__main__":
         elif action == "4":
             print("Terima kasih telah menggunakan program ini.")
             break
-        
         else:
             print("Pilihan tidak valid, silakan coba lagi.")
